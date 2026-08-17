@@ -1,0 +1,362 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Caveat:wght@600&family=Dancing+Script:wght@600&family=Great+Vibes&display=swap');
+
+/* Design System Tokens */
+:root {
+  /* Light Theme Color Tokens (Default) */
+  --bg-app: #F8FAFC;
+  --bg-surface: #FFFFFF;
+  --bg-surface-hover: #F1F5F9;
+  --bg-muted: #E2E8F0;
+  --bg-code: #0F172A;
+
+  --text-main: #0F172A;
+  --text-muted: #475569;
+  --text-inverse: #FFFFFF;
+
+  --border-color: #E2E8F0;
+  --border-focus: #2563EB;
+
+  --accent-primary: #2563EB;
+  --accent-primary-hover: #1D4ED8;
+  --accent-secondary: #059669;
+  --accent-secondary-hover: #047857;
+  --accent-warning: #D97706;
+  --accent-purple: #7C3AED;
+
+  --badge-active-bg: #DBEAFE;
+  --badge-active-text: #1E40AF;
+  --badge-roadmap-bg: #F3F4F6;
+  --badge-roadmap-text: #4B5563;
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  --max-width: 1200px;
+
+  /* Animation & Motion System Tokens */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 220ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-bounce: 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+[data-theme='dark'] {
+  /* Dark Theme Color Tokens */
+  --bg-app: #0B0F19;
+  --bg-surface: #111827;
+  --bg-surface-hover: #1F2937;
+  --bg-muted: #1E293B;
+  --bg-code: #070A12;
+
+  --text-main: #F9FAFB;
+  --text-muted: #9CA3AF;
+  --text-inverse: #0F172A;
+
+  --border-color: #1F2937;
+  --border-focus: #3B82F6;
+
+  --accent-primary: #3B82F6;
+  --accent-primary-hover: #60A5FA;
+  --accent-secondary: #10B981;
+  --accent-secondary-hover: #34D399;
+  --accent-warning: #F59E0B;
+  --accent-purple: #8B5CF6;
+
+  --badge-active-bg: #1E3A8A;
+  --badge-active-text: #BFDBFE;
+  --badge-roadmap-bg: #1F2937;
+  --badge-roadmap-text: #D1D5DB;
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+}
+
+/* CSS Reset & Global Layout */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color var(--transition-smooth), color var(--transition-smooth);
+}
+
+code, pre, kbd, samp {
+  font-family: var(--font-mono), monospace;
+}
+
+a {
+  color: var(--accent-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast), opacity var(--transition-fast);
+}
+
+a:hover {
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+/* Touch Action Optimization for Mobile Smoothness */
+button, a, input, select, textarea {
+  touch-action: manipulation;
+}
+
+/* Accessible Focus States */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+/* Hardware Accelerated Interactive Button Utility */
+.btn-interactive {
+  will-change: transform, box-shadow;
+  transition: transform var(--transition-fast), background-color var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast), opacity var(--transition-fast);
+  transform: translateZ(0);
+}
+
+.btn-interactive:hover {
+  transform: translateY(-1px) translateZ(0);
+}
+
+.btn-interactive:active {
+  transform: translateY(1px) scale(0.98) translateZ(0);
+  transition-duration: 50ms;
+}
+
+/* Hardware Accelerated Interactive Card Utility */
+.card-interactive {
+  will-change: transform, box-shadow, border-color;
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), border-color var(--transition-smooth), background-color var(--transition-smooth);
+  transform: translateZ(0);
+}
+
+.card-interactive:hover {
+  transform: translateY(-3px) translateZ(0);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent-primary);
+}
+
+.card-interactive:active {
+  transform: translateY(-1px) translateZ(0);
+  transition-duration: 50ms;
+}
+
+/* Page Navigation Route Transition */
+.page-transition-wrapper {
+  animation: pageFadeIn var(--transition-smooth) ease-out forwards;
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Page Layout Wrappers */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  width: 100%;
+}
+
+.site-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  width: 100%;
+}
+
+/* Reusable Section Header */
+.section-header {
+  margin-bottom: 2.5rem;
+}
+
+.section-header.center {
+  text-align: center;
+}
+
+.section-tag {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-primary);
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.25;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-top: 0.75rem;
+  max-width: 700px;
+}
+
+.section-header.center .section-subtitle {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Card Grid Layouts */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Lesson Workbench Controlled Viewport Layout */
+.page-container:has(.lesson-workbench) {
+  height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+.page-container:has(.lesson-workbench) .main-content {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 4rem);
+  min-height: 0;
+  overflow: hidden;
+}
+
+.page-container:has(.lesson-workbench) footer {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .page-container:has(.lesson-workbench) {
+    height: auto;
+    overflow: auto;
+  }
+
+  .page-container:has(.lesson-workbench) footer {
+    display: block;
+  }
+
+  .lesson-workbench {
+    height: auto !important;
+    min-height: calc(100vh - 64px);
+    overflow: visible !important;
+  }
+
+  .workbench-grid {
+    grid-template-columns: 1fr !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+}
+
+/* Accessibility Reduced Motion Handling */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .btn-interactive:hover,
+  .card-interactive:hover {
+    transform: none !important;
+  }
+}
+
+/* Print Styles for Certificate Preview & Official Credentials */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+  body {
+    background: #ffffff !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  body * {
+    visibility: hidden;
+  }
+  .certificate-modal-overlay,
+  .certificate-modal-content,
+  #certificate-print-area,
+  #certificate-print-area * {
+    visibility: visible;
+  }
+  .certificate-modal-overlay {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    padding: 0 !important;
+  }
+  .certificate-modal-content {
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    background: transparent !important;
+  }
+  .certificate-modal-header,
+  .certificate-modal-footer {
+    display: none !important;
+  }
+  #certificate-print-area {
+    margin: 0 auto !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+    max-width: 100% !important;
+    width: 100% !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
+
+
+

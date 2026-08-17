@@ -1,0 +1,954 @@
+{
+  "tableData": [
+    {
+      "course": "Python",
+      "slug": "python",
+      "ui": "PASS",
+      "l1": "PASS",
+      "l2": "PASS",
+      "l3": "PASS",
+      "contentDepth": "INSUFFICIENT",
+      "exercises": "GOOD",
+      "projects": "GOOD",
+      "assessment": "PASS",
+      "overall": "NEEDS CONTENT WORK",
+      "avgL1Words": 39,
+      "avgL2Words": 33,
+      "avgL3Words": 25,
+      "shallowCount": 29,
+      "totalLessons": 30
+    },
+    {
+      "course": "Java",
+      "slug": "java",
+      "ui": "PASS",
+      "l1": "PASS",
+      "l2": "PASS",
+      "l3": "PASS",
+      "contentDepth": "INSUFFICIENT",
+      "exercises": "GOOD",
+      "projects": "GOOD",
+      "assessment": "PASS",
+      "overall": "NEEDS CONTENT WORK",
+      "avgL1Words": 336,
+      "avgL2Words": 65,
+      "avgL3Words": 39,
+      "shallowCount": 5,
+      "totalLessons": 7
+    },
+    {
+      "course": "JavaScript",
+      "slug": "javascript",
+      "ui": "PASS",
+      "l1": "PASS",
+      "l2": "PASS",
+      "l3": "PASS",
+      "contentDepth": "INSUFFICIENT",
+      "exercises": "GOOD",
+      "projects": "GOOD",
+      "assessment": "PASS",
+      "overall": "NEEDS CONTENT WORK",
+      "avgL1Words": 123,
+      "avgL2Words": 37,
+      "avgL3Words": 38,
+      "shallowCount": 5,
+      "totalLessons": 6
+    },
+    {
+      "course": "React/Next.js",
+      "slug": "react",
+      "ui": "PASS",
+      "l1": "PASS",
+      "l2": "PASS",
+      "l3": "PASS",
+      "contentDepth": "INSUFFICIENT",
+      "exercises": "GOOD",
+      "projects": "GOOD",
+      "assessment": "PASS",
+      "overall": "NEEDS CONTENT WORK",
+      "avgL1Words": 80,
+      "avgL2Words": 42,
+      "avgL3Words": 32,
+      "shallowCount": 6,
+      "totalLessons": 6
+    },
+    {
+      "course": "HTML/CSS",
+      "slug": "html-css",
+      "ui": "PASS",
+      "l1": "PASS",
+      "l2": "PASS",
+      "l3": "PASS",
+      "contentDepth": "INSUFFICIENT",
+      "exercises": "GOOD",
+      "projects": "GOOD",
+      "assessment": "PASS",
+      "overall": "NEEDS CONTENT WORK",
+      "avgL1Words": 122,
+      "avgL2Words": 40,
+      "avgL3Words": 24,
+      "shallowCount": 5,
+      "totalLessons": 6
+    },
+    {
+      "course": "DBMS/SQL",
+      "slug": "dbms",
+      "ui": "PASS",
+      "l1": "PASS",
+      "l2": "PASS",
+      "l3": "PASS",
+      "contentDepth": "INSUFFICIENT",
+      "exercises": "GOOD",
+      "projects": "GOOD",
+      "assessment": "PASS",
+      "overall": "NEEDS CONTENT WORK",
+      "avgL1Words": 71,
+      "avgL2Words": 52,
+      "avgL3Words": 34,
+      "shallowCount": 6,
+      "totalLessons": 6
+    },
+    {
+      "course": "DSA",
+      "slug": "dsa",
+      "ui": "PASS",
+      "l1": "PASS",
+      "l2": "PASS",
+      "l3": "PASS",
+      "contentDepth": "INSUFFICIENT",
+      "exercises": "GOOD",
+      "projects": "GOOD",
+      "assessment": "PASS",
+      "overall": "NEEDS CONTENT WORK",
+      "avgL1Words": 61,
+      "avgL2Words": 45,
+      "avgL3Words": 60,
+      "shallowCount": 7,
+      "totalLessons": 7
+    },
+    {
+      "course": "GenAI/LLM",
+      "slug": "genai-llm-agents",
+      "ui": "PASS",
+      "l1": "PASS",
+      "l2": "PASS",
+      "l3": "PASS",
+      "contentDepth": "INSUFFICIENT",
+      "exercises": "GOOD",
+      "projects": "GOOD",
+      "assessment": "PASS",
+      "overall": "NEEDS CONTENT WORK",
+      "avgL1Words": 64,
+      "avgL2Words": 41,
+      "avgL3Words": 43,
+      "shallowCount": 6,
+      "totalLessons": 6
+    },
+    {
+      "course": "Web Security",
+      "slug": "web-security",
+      "ui": "PASS",
+      "l1": "PASS",
+      "l2": "PASS",
+      "l3": "PASS",
+      "contentDepth": "INSUFFICIENT",
+      "exercises": "GOOD",
+      "projects": "GOOD",
+      "assessment": "PASS",
+      "overall": "NEEDS CONTENT WORK",
+      "avgL1Words": 61,
+      "avgL2Words": 41,
+      "avgL3Words": 61,
+      "shallowCount": 6,
+      "totalLessons": 7
+    },
+    {
+      "course": "Linux Security",
+      "slug": "linux-security",
+      "ui": "PASS",
+      "l1": "PASS",
+      "l2": "PASS",
+      "l3": "PASS",
+      "contentDepth": "INSUFFICIENT",
+      "exercises": "GOOD",
+      "projects": "GOOD",
+      "assessment": "PASS",
+      "overall": "NEEDS CONTENT WORK",
+      "avgL1Words": 94,
+      "avgL2Words": 57,
+      "avgL3Words": 37,
+      "shallowCount": 6,
+      "totalLessons": 7
+    },
+    {
+      "course": "Git/GitHub",
+      "slug": "git-github",
+      "ui": "PASS",
+      "l1": "PASS",
+      "l2": "PASS",
+      "l3": "PASS",
+      "contentDepth": "INSUFFICIENT",
+      "exercises": "GOOD",
+      "projects": "GOOD",
+      "assessment": "PASS",
+      "overall": "NEEDS CONTENT WORK",
+      "avgL1Words": 76,
+      "avgL2Words": 46,
+      "avgL3Words": 32,
+      "shallowCount": 5,
+      "totalLessons": 6
+    },
+    {
+      "course": "Cloud/DevOps",
+      "slug": "cloud-devops",
+      "ui": "PASS",
+      "l1": "PASS",
+      "l2": "PASS",
+      "l3": "PASS",
+      "contentDepth": "INSUFFICIENT",
+      "exercises": "GOOD",
+      "projects": "GOOD",
+      "assessment": "PASS",
+      "overall": "NEEDS CONTENT WORK",
+      "avgL1Words": 53,
+      "avgL2Words": 40,
+      "avgL3Words": 33,
+      "shallowCount": 6,
+      "totalLessons": 7
+    },
+    {
+      "course": "Testing",
+      "slug": "software-testing",
+      "ui": "PASS",
+      "l1": "PASS",
+      "l2": "PASS",
+      "l3": "PASS",
+      "contentDepth": "INSUFFICIENT",
+      "exercises": "GOOD",
+      "projects": "GOOD",
+      "assessment": "PASS",
+      "overall": "NEEDS CONTENT WORK",
+      "avgL1Words": 75,
+      "avgL2Words": 44,
+      "avgL3Words": 37,
+      "shallowCount": 5,
+      "totalLessons": 6
+    },
+    {
+      "course": "System Design",
+      "slug": "system-design",
+      "ui": "PASS",
+      "l1": "PASS",
+      "l2": "PASS",
+      "l3": "PASS",
+      "contentDepth": "INSUFFICIENT",
+      "exercises": "GOOD",
+      "projects": "GOOD",
+      "assessment": "PASS",
+      "overall": "NEEDS CONTENT WORK",
+      "avgL1Words": 67,
+      "avgL2Words": 59,
+      "avgL3Words": 46,
+      "shallowCount": 6,
+      "totalLessons": 6
+    },
+    {
+      "course": "Interview Prep",
+      "slug": "interview-preparation",
+      "ui": "PASS",
+      "l1": "PASS",
+      "l2": "PASS",
+      "l3": "PASS",
+      "contentDepth": "INSUFFICIENT",
+      "exercises": "GOOD",
+      "projects": "GOOD",
+      "assessment": "PASS",
+      "overall": "NEEDS CONTENT WORK",
+      "avgL1Words": 83,
+      "avgL2Words": 50,
+      "avgL3Words": 42,
+      "shallowCount": 5,
+      "totalLessons": 6
+    }
+  ],
+  "shallowLessonsMap": {
+    "python": [
+      {
+        "id": "py-les-0-2",
+        "title": "Variables, Data Types & Input/Output",
+        "words": 55,
+        "module": "Level 0: Absolute Beginner — Programming & Syntax Basics"
+      },
+      {
+        "id": "py-les-1",
+        "title": "Variables & Fundamental Data Types",
+        "words": 77,
+        "module": "Level 1: Python Foundations — Data Structures & Core IO"
+      },
+      {
+        "id": "py-les-2",
+        "title": "Control Flow & Conditional Logic",
+        "words": 22,
+        "module": "Level 1: Python Foundations — Data Structures & Core IO"
+      },
+      {
+        "id": "py-les-3",
+        "title": "Loops & Iteration",
+        "words": 21,
+        "module": "Level 1: Python Foundations — Data Structures & Core IO"
+      },
+      {
+        "id": "py-les-4",
+        "title": "Functions, Parameters & Scope",
+        "words": 19,
+        "module": "Level 1: Python Foundations — Data Structures & Core IO"
+      },
+      {
+        "id": "py-les-5",
+        "title": "Lists, Tuples & Slicing",
+        "words": 16,
+        "module": "Level 1: Python Foundations — Data Structures & Core IO"
+      },
+      {
+        "id": "py-les-6",
+        "title": "Dictionaries, Sets & Hash Lookups",
+        "words": 16,
+        "module": "Level 1: Python Foundations — Data Structures & Core IO"
+      },
+      {
+        "id": "py-les-7",
+        "title": "Exceptions, File I/O, JSON & CSV Handling",
+        "words": 23,
+        "module": "Level 1: Python Foundations — Data Structures & Core IO"
+      },
+      {
+        "id": "py-les-2-1",
+        "title": "OOP Foundations: Classes, Objects & Constructors",
+        "words": 24,
+        "module": "Level 2: Intermediate Python — OOP, Functional & Testing"
+      },
+      {
+        "id": "py-les-2-2",
+        "title": "Inheritance, Polymorphism & Encapsulation",
+        "words": 38,
+        "module": "Level 2: Intermediate Python — OOP, Functional & Testing"
+      },
+      {
+        "id": "py-les-2-3",
+        "title": "Iterators, Generators & Decorators",
+        "words": 28,
+        "module": "Level 2: Intermediate Python — OOP, Functional & Testing"
+      },
+      {
+        "id": "py-les-2-4",
+        "title": "Context Managers, Dataclasses, Type Hints & Testing",
+        "words": 42,
+        "module": "Level 2: Intermediate Python — OOP, Functional & Testing"
+      },
+      {
+        "id": "py-les-3-1",
+        "title": "Package Management, Virtual Envs & Logging",
+        "words": 20,
+        "module": "Level 3: Professional Python — Tooling, APIs & Async"
+      },
+      {
+        "id": "py-les-3-2",
+        "title": "HTTP, REST APIs & JSON API Clients",
+        "words": 24,
+        "module": "Level 3: Professional Python — Tooling, APIs & Async"
+      },
+      {
+        "id": "py-les-3-3",
+        "title": "Database Programming & SQL Integration",
+        "words": 22,
+        "module": "Level 3: Professional Python — Tooling, APIs & Async"
+      },
+      {
+        "id": "py-les-3-4",
+        "title": "Asynchronous Programming & asyncio Essentials",
+        "words": 25,
+        "module": "Level 3: Professional Python — Tooling, APIs & Async"
+      },
+      {
+        "id": "py-les-4-1",
+        "title": "FastAPI & Modern Web Backend Frameworks",
+        "words": 21,
+        "module": "Level 4: Python Backend — FastAPI, Databases & Docker"
+      },
+      {
+        "id": "py-les-4-2",
+        "title": "Backend Authentication & Security Architecture",
+        "words": 20,
+        "module": "Level 4: Python Backend — FastAPI, Databases & Docker"
+      },
+      {
+        "id": "py-les-4-3",
+        "title": "PostgreSQL, ORM & Database Migrations",
+        "words": 21,
+        "module": "Level 4: Python Backend — FastAPI, Databases & Docker"
+      },
+      {
+        "id": "py-les-4-4",
+        "title": "Docker Containerization & CI/CD Deployment",
+        "words": 21,
+        "module": "Level 4: Python Backend — FastAPI, Databases & Docker"
+      },
+      {
+        "id": "py-les-5-1",
+        "title": "Concurrency: asyncio, Threading & Multiprocessing",
+        "words": 42,
+        "module": "Level 5: Advanced Python — Concurrency, Performance & Architecture"
+      },
+      {
+        "id": "py-les-5-2",
+        "title": "Performance Optimization, Profiling & Memory Management",
+        "words": 26,
+        "module": "Level 5: Advanced Python — Concurrency, Performance & Architecture"
+      },
+      {
+        "id": "py-les-5-3",
+        "title": "Advanced Typing, Protocols & Clean Architecture",
+        "words": 26,
+        "module": "Level 5: Advanced Python — Concurrency, Performance & Architecture"
+      },
+      {
+        "id": "py-les-5-4",
+        "title": "Production Error Handling & Observability",
+        "words": 22,
+        "module": "Level 5: Advanced Python — Concurrency, Performance & Architecture"
+      },
+      {
+        "id": "py-les-6-1",
+        "title": "Production Architecture & Scalable API Design",
+        "words": 24,
+        "module": "Level 6: Industry Mastery — Scalable Systems & Production Engineering"
+      },
+      {
+        "id": "py-les-6-2",
+        "title": "Caching, Message Queues & Background Workers",
+        "words": 29,
+        "module": "Level 6: Industry Mastery — Scalable Systems & Production Engineering"
+      },
+      {
+        "id": "py-les-6-3",
+        "title": "Security Architecture, Monitoring & Hardening",
+        "words": 28,
+        "module": "Level 6: Industry Mastery — Scalable Systems & Production Engineering"
+      },
+      {
+        "id": "py-les-6-4",
+        "title": "Performance Engineering & Production Maintainability",
+        "words": 30,
+        "module": "Level 6: Industry Mastery — Scalable Systems & Production Engineering"
+      },
+      {
+        "id": "py-les-7-1",
+        "title": "Portfolio Architecture & Capstone Guidelines",
+        "words": 28,
+        "module": "Level 7: Portfolio & Capstone Projects"
+      }
+    ],
+    "java": [
+      {
+        "id": "java-les-3",
+        "title": "Java Collection Framework (List, Set, Map)",
+        "words": 86,
+        "module": "Level 2: Collections, Generics & Exception Handling"
+      },
+      {
+        "id": "java-les-4",
+        "title": "Exception Handling, Custom Exceptions & Generics",
+        "words": 44,
+        "module": "Level 2: Collections, Generics & Exception Handling"
+      },
+      {
+        "id": "java-les-5",
+        "title": "Stream API, Lambda Expressions & Functional Processing",
+        "words": 46,
+        "module": "Level 3: Streams, Multithreading & Spring Boot"
+      },
+      {
+        "id": "java-les-6",
+        "title": "Multithreading, ExecutorService & Concurrency Utilities",
+        "words": 32,
+        "module": "Level 3: Streams, Multithreading & Spring Boot"
+      },
+      {
+        "id": "java-les-7",
+        "title": "Spring Boot REST Architecture & Microservice Endpoints",
+        "words": 39,
+        "module": "Level 3: Streams, Multithreading & Spring Boot"
+      }
+    ],
+    "javascript": [
+      {
+        "id": "js-les-2",
+        "title": "First-Class Functions, Closures & Lexical Scope",
+        "words": 58,
+        "module": "Level 1: JavaScript & ES6+ Foundations"
+      },
+      {
+        "id": "js-les-3",
+        "title": "DOM Architecture, Traversal & Event Delegation",
+        "words": 36,
+        "module": "Level 2: DOM Manipulation, Events & Async Promises"
+      },
+      {
+        "id": "js-les-4",
+        "title": "Asynchronous Promises & async/await Syntax",
+        "words": 37,
+        "module": "Level 2: DOM Manipulation, Events & Async Promises"
+      },
+      {
+        "id": "js-les-5",
+        "title": "ES Modules (import / export) & Code Organization",
+        "words": 32,
+        "module": "Level 3: ES Modules, Performance & Modern Architecture"
+      },
+      {
+        "id": "js-les-6",
+        "title": "JS Performance Engineering: Debounce, Throttle & Memory",
+        "words": 43,
+        "module": "Level 3: ES Modules, Performance & Modern Architecture"
+      }
+    ],
+    "react": [
+      {
+        "id": "react-les-1",
+        "title": "JSX, Virtual DOM & Component Composition",
+        "words": 91,
+        "module": "Level 1: React Fundamentals & JSX Component Architecture"
+      },
+      {
+        "id": "react-les-2",
+        "title": "State Management with useState & useEffect Hooks",
+        "words": 68,
+        "module": "Level 1: React Fundamentals & JSX Component Architecture"
+      },
+      {
+        "id": "react-les-3",
+        "title": "Next.js App Router Architecture & File System Routing",
+        "words": 39,
+        "module": "Level 2: Next.js App Router & Server Components"
+      },
+      {
+        "id": "react-les-4",
+        "title": "React Server Components (RSC) & Server Actions",
+        "words": 45,
+        "module": "Level 2: Next.js App Router & Server Components"
+      },
+      {
+        "id": "react-les-5",
+        "title": "Global State Management with React Context API",
+        "words": 37,
+        "module": "Level 3: Full-Stack Architecture & Performance"
+      },
+      {
+        "id": "react-les-6",
+        "title": "React Performance Optimization & Bundle Splitting",
+        "words": 26,
+        "module": "Level 3: Full-Stack Architecture & Performance"
+      }
+    ],
+    "html-css": [
+      {
+        "id": "web-les-2",
+        "title": "Accessible HTML5 Forms, Inputs & Native Validation",
+        "words": 44,
+        "module": "Level 1: HTML5 Semantics, Accessibility & Forms"
+      },
+      {
+        "id": "web-les-3",
+        "title": "CSS Box Model & 1D Layouts with Flexbox",
+        "words": 54,
+        "module": "Level 2: CSS Box Model, Flexbox & Grid Systems"
+      },
+      {
+        "id": "web-les-4",
+        "title": "2D CSS Grid Layouts & Mobile-First Media Queries",
+        "words": 25,
+        "module": "Level 2: CSS Box Model, Flexbox & Grid Systems"
+      },
+      {
+        "id": "web-les-5",
+        "title": "CSS Custom Properties (Variables) & Theme Switching",
+        "words": 25,
+        "module": "Level 3: CSS Custom Properties, Animations & Glassmorphism"
+      },
+      {
+        "id": "web-les-6",
+        "title": "CSS Transitions, Keyframe Animations & Glassmorphism UI",
+        "words": 23,
+        "module": "Level 3: CSS Custom Properties, Animations & Glassmorphism"
+      }
+    ],
+    "dbms": [
+      {
+        "id": "sql-les-1",
+        "title": "Relational Architecture, Primary Keys & SQL Syntax",
+        "words": 87,
+        "module": "Level 1: Relational Database Fundamentals & SQL Queries"
+      },
+      {
+        "id": "sql-les-2",
+        "title": "Multi-Table JOINs & GROUP BY Aggregations",
+        "words": 55,
+        "module": "Level 1: Relational Database Fundamentals & SQL Queries"
+      },
+      {
+        "id": "sql-les-3",
+        "title": "Database Normalization (1NF, 2NF, 3NF) & ER Diagrams",
+        "words": 46,
+        "module": "Level 2: Subqueries, Normalization & ACID Transactions"
+      },
+      {
+        "id": "sql-les-4",
+        "title": "ACID Guarantees & Transaction Control (BEGIN, COMMIT, ROLLBACK)",
+        "words": 57,
+        "module": "Level 2: Subqueries, Normalization & ACID Transactions"
+      },
+      {
+        "id": "sql-les-5",
+        "title": "B-Tree Indexing & EXPLAIN ANALYZE Execution Plans",
+        "words": 36,
+        "module": "Level 3: Indexing, Query Optimization & Window Functions"
+      },
+      {
+        "id": "sql-les-6",
+        "title": "Advanced Analytical Window Functions (OVER, ROW_NUMBER, PARTITION BY)",
+        "words": 31,
+        "module": "Level 3: Indexing, Query Optimization & Window Functions"
+      }
+    ],
+    "dsa": [
+      {
+        "id": "dsa-les-1",
+        "title": "Asymptotic Big-O Analysis & Space Complexity",
+        "words": 77,
+        "module": "Level 1: Algorithmic Complexity & Linear Data Structures"
+      },
+      {
+        "id": "dsa-les-2",
+        "title": "Linked Lists, Stacks, Queues & Two-Pointer Patterns",
+        "words": 44,
+        "module": "Level 1: Algorithmic Complexity & Linear Data Structures"
+      },
+      {
+        "id": "dsa-les-3",
+        "title": "Binary Search Trees (BST) & Tree Traversals",
+        "words": 44,
+        "module": "Level 2: Trees, Graphs & Searching Algorithms"
+      },
+      {
+        "id": "dsa-les-4",
+        "title": "Graph Traversals: Breadth-First Search (BFS) & Depth-First Search (DFS)",
+        "words": 45,
+        "module": "Level 2: Trees, Graphs & Searching Algorithms"
+      },
+      {
+        "id": "dsa-les-5",
+        "title": "Sorting Algorithms (MergeSort, QuickSort) & Binary Heaps",
+        "words": 53,
+        "module": "Level 3: Sorting, Heaps & Dynamic Programming"
+      },
+      {
+        "id": "dsa-les-6",
+        "title": "Dynamic Programming: Memoization vs Tabulation",
+        "words": 55,
+        "module": "Level 3: Sorting, Heaps & Dynamic Programming"
+      },
+      {
+        "id": "dsa-les-7",
+        "title": "Technical Interview Algorithmic Problem-Solving Framework",
+        "words": 72,
+        "module": "Level 3: Sorting, Heaps & Dynamic Programming"
+      }
+    ],
+    "genai-llm-agents": [
+      {
+        "id": "ai-les-1",
+        "title": "LLM Transformer Architecture & Systematic Prompt Engineering",
+        "words": 85,
+        "module": "Level 1: AI & Large Language Model Foundations"
+      },
+      {
+        "id": "ai-les-2",
+        "title": "Vector Embeddings & Semantic Similarity Search",
+        "words": 42,
+        "module": "Level 1: AI & Large Language Model Foundations"
+      },
+      {
+        "id": "ai-les-3",
+        "title": "Document Chunking Strategies & Vector Indexing",
+        "words": 49,
+        "module": "Level 2: Retrieval-Augmented Generation (RAG) Architecture"
+      },
+      {
+        "id": "ai-les-4",
+        "title": "LLM Function / Tool Calling & JSON Schemas",
+        "words": 32,
+        "module": "Level 2: Retrieval-Augmented Generation (RAG) Architecture"
+      },
+      {
+        "id": "ai-les-5",
+        "title": "The ReAct (Reasoning + Acting) Agent Execution Loop",
+        "words": 43,
+        "module": "Level 3: Autonomous Multi-Agent Systems & Evaluation"
+      },
+      {
+        "id": "ai-les-6",
+        "title": "LLM Evaluation (RAGAS / G-Eval) & Safety Guardrails",
+        "words": 43,
+        "module": "Level 3: Autonomous Multi-Agent Systems & Evaluation"
+      }
+    ],
+    "web-security": [
+      {
+        "id": "sec-les-1",
+        "title": "HTTP/HTTPS Security Protocols & Security Headers",
+        "words": 80,
+        "module": "Level 1: HTTP Security & Authentication Defense"
+      },
+      {
+        "id": "sec-les-2",
+        "title": "Secure Hashing (Argon2 / bcrypt) & JWT Token Security",
+        "words": 41,
+        "module": "Level 1: HTTP Security & Authentication Defense"
+      },
+      {
+        "id": "sec-les-3",
+        "title": "SQL Injection (SQLi) & Cross-Site Scripting (XSS) Mitigation",
+        "words": 48,
+        "module": "Level 2: OWASP Top 10 Vulnerabilities & Code Defenses"
+      },
+      {
+        "id": "sec-les-4",
+        "title": "CSRF Defense & Broken Access Control Remediation",
+        "words": 33,
+        "module": "Level 2: OWASP Top 10 Vulnerabilities & Code Defenses"
+      },
+      {
+        "id": "sec-les-5",
+        "title": "Server-Side Request Forgery (SSRF) & Supply Chain Security",
+        "words": 37,
+        "module": "Level 3: Advanced Application Security & Threat Modeling"
+      },
+      {
+        "id": "sec-les-6",
+        "title": "STRIDE Threat Modeling & DevSecOps Security Auditing",
+        "words": 84,
+        "module": "Level 3: Advanced Application Security & Threat Modeling"
+      }
+    ],
+    "linux-security": [
+      {
+        "id": "lin-les-1",
+        "title": "Linux Terminal CLI, FHS Navigation & File Operations",
+        "words": 90,
+        "module": "Level 1: Linux CLI & File System Security"
+      },
+      {
+        "id": "lin-les-2",
+        "title": "POSIX File Permissions (chmod, chown) & SUID Security",
+        "words": 97,
+        "module": "Level 1: Linux CLI & File System Security"
+      },
+      {
+        "id": "lin-les-3",
+        "title": "Process Management, OS Signals & Systemd Unit Services",
+        "words": 35,
+        "module": "Level 2: Process Control, Systemd & Bash Automation"
+      },
+      {
+        "id": "lin-les-4",
+        "title": "Bash Shell Scripting & Automated Cron Administration",
+        "words": 79,
+        "module": "Level 2: Process Control, Systemd & Bash Automation"
+      },
+      {
+        "id": "lin-les-5",
+        "title": "Hardened SSH Administration & UFW Firewall Configuration",
+        "words": 38,
+        "module": "Level 3: Linux Security Hardening, Firewalls & SSH"
+      },
+      {
+        "id": "lin-les-6",
+        "title": "Mandatory Access Control (SELinux / AppArmor) & System Auditing",
+        "words": 36,
+        "module": "Level 3: Linux Security Hardening, Firewalls & SSH"
+      }
+    ],
+    "git-github": [
+      {
+        "id": "git-les-2",
+        "title": "Git Branching, Fast-Forward & Merge Conflict Resolution",
+        "words": 50,
+        "module": "Level 1: Distributed Version Control & Git Mechanics"
+      },
+      {
+        "id": "git-les-3",
+        "title": "Interactive Rebasing, Squashing & Commit Rewriting",
+        "words": 54,
+        "module": "Level 2: Interactive Rebasing, Cherry-Picking & Reflog"
+      },
+      {
+        "id": "git-les-4",
+        "title": "Git Reflog Disaster Recovery & Cherry-Picking",
+        "words": 38,
+        "module": "Level 2: Interactive Rebasing, Cherry-Picking & Reflog"
+      },
+      {
+        "id": "git-les-5",
+        "title": "GitHub Pull Requests, Code Reviews & Branch Protection",
+        "words": 34,
+        "module": "Level 3: GitHub Collaboration & Actions CI/CD Automation"
+      },
+      {
+        "id": "git-les-6",
+        "title": "GitHub Actions CI/CD Pipeline Automation",
+        "words": 30,
+        "module": "Level 3: GitHub Collaboration & Actions CI/CD Automation"
+      }
+    ],
+    "cloud-devops": [
+      {
+        "id": "cloud-les-1",
+        "title": "Cloud Service Models & AWS Core Infrastructure",
+        "words": 70,
+        "module": "Level 1: Cloud Architecture & Docker Containerization"
+      },
+      {
+        "id": "cloud-les-2",
+        "title": "Docker Image Layering & Multi-Stage Dockerfiles",
+        "words": 36,
+        "module": "Level 1: Cloud Architecture & Docker Containerization"
+      },
+      {
+        "id": "cloud-les-3",
+        "title": "Multi-Container Stacks with Docker Compose",
+        "words": 40,
+        "module": "Level 2: Kubernetes Container Orchestration & Docker Compose"
+      },
+      {
+        "id": "cloud-les-4",
+        "title": "Kubernetes Cluster Architecture: Pods, Deployments & Services",
+        "words": 40,
+        "module": "Level 2: Kubernetes Container Orchestration & Docker Compose"
+      },
+      {
+        "id": "cloud-les-5",
+        "title": "Infrastructure as Code (IaC) with HashiCorp Terraform",
+        "words": 33,
+        "module": "Level 3: Infrastructure as Code (Terraform) & Observability"
+      },
+      {
+        "id": "cloud-les-6",
+        "title": "Cloud Monitoring & Observability with Prometheus & Grafana",
+        "words": 33,
+        "module": "Level 3: Infrastructure as Code (Terraform) & Observability"
+      }
+    ],
+    "software-testing": [
+      {
+        "id": "test-les-2",
+        "title": "Test-Driven Development (TDD): Red-Green-Refactor",
+        "words": 50,
+        "module": "Level 1: Automated Unit Testing & TDD Principles"
+      },
+      {
+        "id": "test-les-3",
+        "title": "Test Doubles: Mocks, Stubs, Spies & Dependency Injection",
+        "words": 55,
+        "module": "Level 2: Test Doubles (Mocks/Spies) & Integration Testing"
+      },
+      {
+        "id": "test-les-4",
+        "title": "API Integration Testing & Contract Validation",
+        "words": 32,
+        "module": "Level 2: Test Doubles (Mocks/Spies) & Integration Testing"
+      },
+      {
+        "id": "test-les-5",
+        "title": "Automated E2E Testing with Playwright & Page Object Model (POM)",
+        "words": 34,
+        "module": "Level 3: Automated E2E Browser Testing & CI Suites"
+      },
+      {
+        "id": "test-les-6",
+        "title": "Code Coverage Thresholds & CI Test Runner Pipeline",
+        "words": 39,
+        "module": "Level 3: Automated E2E Browser Testing & CI Suites"
+      }
+    ],
+    "system-design": [
+      {
+        "id": "sd-les-1",
+        "title": "System Metrics: Latency, QPS, Availability Nines & Capacity Math",
+        "words": 86,
+        "module": "Level 1: Scalability Metrics & Load Balancing Patterns"
+      },
+      {
+        "id": "sd-les-2",
+        "title": "Load Balancing Algorithms & Consistent Hashing",
+        "words": 47,
+        "module": "Level 1: Scalability Metrics & Load Balancing Patterns"
+      },
+      {
+        "id": "sd-les-3",
+        "title": "Distributed Caching Strategies & Redis Invalidation",
+        "words": 54,
+        "module": "Level 2: Distributed Caching, CAP Theorem & Database Sharding"
+      },
+      {
+        "id": "sd-les-4",
+        "title": "The CAP Theorem & Database Horizontal Sharding",
+        "words": 63,
+        "module": "Level 2: Distributed Caching, CAP Theorem & Database Sharding"
+      },
+      {
+        "id": "sd-les-5",
+        "title": "Asynchronous Message Queues (Kafka / RabbitMQ) & Event Streaming",
+        "words": 31,
+        "module": "Level 3: Microservices, Message Queues & Real-World Blueprints"
+      },
+      {
+        "id": "sd-les-6",
+        "title": "System Design Architecture Blueprints & Interview Case Studies",
+        "words": 60,
+        "module": "Level 3: Microservices, Message Queues & Real-World Blueprints"
+      }
+    ],
+    "interview-preparation": [
+      {
+        "id": "int-les-2",
+        "title": "Essential Coding Patterns: Two-Pointers & Sliding Window",
+        "words": 43,
+        "module": "Level 1: Technical Interview Frameworks & Coding Patterns"
+      },
+      {
+        "id": "int-les-3",
+        "title": "System Design Interview Framework & Whiteboard Communication",
+        "words": 49,
+        "module": "Level 2: System Design Interviews & STAR Behavioral Strategy"
+      },
+      {
+        "id": "int-les-4",
+        "title": "STAR Method Behavioral Responses & Leadership Principles",
+        "words": 51,
+        "module": "Level 2: System Design Interviews & STAR Behavioral Strategy"
+      },
+      {
+        "id": "int-les-5",
+        "title": "Compensation Component Analysis & Offer Negotiation Strategies",
+        "words": 37,
+        "module": "Level 3: Mock Interviews & Software Engineering Offer Negotiation"
+      },
+      {
+        "id": "int-les-6",
+        "title": "Full Technical Mock Interview Audit & Feedback Rubrics",
+        "words": 46,
+        "module": "Level 3: Mock Interviews & Software Engineering Offer Negotiation"
+      }
+    ]
+  }
+}

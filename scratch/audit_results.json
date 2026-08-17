@@ -1,0 +1,151 @@
+{
+  "homepage": {
+    "status": 200,
+    "hasTitle": true,
+    "hasCTA": true
+  },
+  "catalog": {
+    "status": 200,
+    "hasSearch": true,
+    "hasCategories": true
+  },
+  "courses": {
+    "python": {
+      "length": 235863,
+      "hasHero": true,
+      "hasL1": true,
+      "hasL2": true,
+      "hasL3": true,
+      "hasOutcomes": true,
+      "hasCTA": true
+    },
+    "java": {
+      "length": 87647,
+      "hasHero": true,
+      "hasL1": true,
+      "hasL2": true,
+      "hasL3": true,
+      "hasOutcomes": true,
+      "hasCTA": true
+    },
+    "javascript": {
+      "length": 77128,
+      "hasHero": true,
+      "hasL1": true,
+      "hasL2": true,
+      "hasL3": true,
+      "hasOutcomes": true,
+      "hasCTA": true
+    },
+    "react": {
+      "length": 75636,
+      "hasHero": true,
+      "hasL1": true,
+      "hasL2": true,
+      "hasL3": true,
+      "hasOutcomes": true,
+      "hasCTA": true
+    },
+    "html-css": {
+      "length": 76503,
+      "hasHero": true,
+      "hasL1": true,
+      "hasL2": true,
+      "hasL3": true,
+      "hasOutcomes": true,
+      "hasCTA": true
+    },
+    "dbms": {
+      "length": 75580,
+      "hasHero": true,
+      "hasL1": true,
+      "hasL2": true,
+      "hasL3": true,
+      "hasOutcomes": true,
+      "hasCTA": true
+    },
+    "dsa": {
+      "length": 81242,
+      "hasHero": true,
+      "hasL1": true,
+      "hasL2": true,
+      "hasL3": true,
+      "hasOutcomes": true,
+      "hasCTA": true
+    },
+    "genai-llm-agents": {
+      "length": 75941,
+      "hasHero": true,
+      "hasL1": true,
+      "hasL2": true,
+      "hasL3": true,
+      "hasOutcomes": true,
+      "hasCTA": true
+    },
+    "web-security": {
+      "length": 77466,
+      "hasHero": true,
+      "hasL1": true,
+      "hasL2": true,
+      "hasL3": true,
+      "hasOutcomes": true,
+      "hasCTA": true
+    },
+    "linux-security": {
+      "length": 75000,
+      "hasHero": true,
+      "hasL1": true,
+      "hasL2": true,
+      "hasL3": true,
+      "hasOutcomes": true,
+      "hasCTA": true
+    },
+    "git-github": {
+      "length": 74715,
+      "hasHero": true,
+      "hasL1": true,
+      "hasL2": true,
+      "hasL3": true,
+      "hasOutcomes": true,
+      "hasCTA": true
+    },
+    "cloud-devops": {
+      "length": 75865,
+      "hasHero": true,
+      "hasL1": true,
+      "hasL2": true,
+      "hasL3": true,
+      "hasOutcomes": true,
+      "hasCTA": true
+    },
+    "software-testing": {
+      "length": 76463,
+      "hasHero": true,
+      "hasL1": true,
+      "hasL2": true,
+      "hasL3": true,
+      "hasOutcomes": true,
+      "hasCTA": true
+    },
+    "system-design": {
+      "length": 78754,
+      "hasHero": true,
+      "hasL1": true,
+      "hasL2": true,
+      "hasL3": true,
+      "hasOutcomes": true,
+      "hasCTA": true
+    },
+    "interview-preparation": {
+      "length": 78849,
+      "hasHero": true,
+      "hasL1": true,
+      "hasL2": true,
+      "hasL3": true,
+      "hasOutcomes": true,
+      "hasCTA": true
+    }
+  },
+  "contentDepth": {},
+  "summary": {}
+}
