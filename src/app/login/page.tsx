@@ -2,10 +2,13 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { signInWithEmail } from '@/app/actions/auth';
+import { useRouter } from 'next/navigation';
+import { createClient } from '@/lib/supabase/client';
 import { Button } from '@/components/Button';
 
 export default function LoginPage() {
+  const router = useRouter();
+
   const [error, setError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -17,14 +20,51 @@ export default function LoginPage() {
 
     const formData = new FormData(e.currentTarget);
 
-    // IMPORTANT:
-    // Do NOT wrap the server action in try/catch.
-    // redirect('/dashboard') is intentionally thrown by Next.js
-    // after successful authentication.
-    const result = await signInWithEmail(formData);
+    const email = String(formData.get('email') || '').trim();
+    const password = String(formData.get('password') || '');
 
-    if (result?.error) {
-      setError(result.error);
+    if (!email || !password) {
+      setError('Email and password are required.');
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      const supabase = createClient();
+
+      const { data, error: loginError } =
+        await supabase.auth.signInWithPassword({
+          email,
+          password,
+        });
+
+      if (loginError) {
+        setError(loginError.message);
+        setIsSubmitting(false);
+        return;
+      }
+
+      if (!data.session || !data.user) {
+        setError('Login failed. Please try again.');
+        setIsSubmitting(false);
+        return;
+      }
+
+      // Authentication succeeded.
+      // Give Supabase/browser cookies a moment to update,
+      // then navigate to the dashboard.
+      router.push('/dashboard');
+      router.refresh();
+
+    } catch (err) {
+      console.error('Login error:', err);
+
+      setError(
+        err instanceof Error
+          ? err.message
+          : 'Unable to sign in. Please try again.'
+      );
+
       setIsSubmitting(false);
     }
   }
