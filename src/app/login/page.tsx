@@ -50,9 +50,8 @@ export default function LoginPage() {
         return;
       }
 
-      // Authentication succeeded.
-      // Give Supabase/browser cookies a moment to update,
-      // then navigate to the dashboard.
+      // Login succeeded.
+      // Navigate to dashboard.
       router.push('/dashboard');
       router.refresh();
 
