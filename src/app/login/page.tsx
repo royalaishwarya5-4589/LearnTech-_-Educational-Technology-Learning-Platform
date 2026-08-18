@@ -9,7 +9,9 @@ export default function LoginPage() {
   const [error, setError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (
+    e: React.FormEvent<HTMLFormElement>
+  ) => {
     e.preventDefault();
 
     setError(null);
@@ -17,17 +19,21 @@ export default function LoginPage() {
 
     const formData = new FormData(e.currentTarget);
 
-    try {
-      const result = await signInWithEmail(formData);
+    /*
+     * IMPORTANT:
+     * Do NOT wrap this in try/catch.
+     *
+     * signInWithEmail() uses Next.js redirect('/dashboard')
+     * after successful authentication.
+     *
+     * redirect() throws an internal Next.js redirect signal.
+     * A try/catch here would catch that signal and incorrectly
+     * display a login error even though authentication succeeded.
+     */
+    const result = await signInWithEmail(formData);
 
-      if (result?.error) {
-        setError(result.error);
-        setIsSubmitting(false);
-      }
-    } catch (err) {
-      console.error('Login error:', err);
-
-      setError('Unable to sign in. Please check your email and password.');
+    if (result?.error) {
+      setError(result.error);
       setIsSubmitting(false);
     }
   };
