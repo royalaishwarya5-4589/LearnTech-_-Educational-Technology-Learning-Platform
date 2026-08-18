@@ -6,9 +6,8 @@ import React, {
   useEffect,
   useState,
 } from 'react';
-import { usePathname } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
-import { User, Session } from '@supabase/supabase-js';
+import type { User, Session } from '@supabase/supabase-js';
 
 interface AuthContextType {
   user: User | null;
@@ -33,72 +32,92 @@ export function AuthProvider({
   const [session, setSession] = useState<Session | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  const pathname = usePathname();
-
   useEffect(() => {
     const supabase = createClient();
 
     let mounted = true;
 
-    const loadSession = async () => {
-      try {
-        const {
-          data: { session },
-        } = await supabase.auth.getSession();
-
-        if (!mounted) return;
-
-        setSession(session);
-        setUser(session?.user ?? null);
-        setIsLoading(false);
-      } catch (error) {
-        console.error(
-          '[AuthProvider] Failed to load session:',
-          error
-        );
-
-        if (mounted) {
-          setSession(null);
-          setUser(null);
-          setIsLoading(false);
-        }
-      }
-    };
-
-    loadSession();
-
+    /*
+     * IMPORTANT:
+     * Register the auth listener immediately.
+     * This prevents the UI from missing the SIGNED_IN event
+     * while getSession() is still running.
+     */
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange(
-      (_event, session) => {
+      (event, currentSession) => {
         if (!mounted) return;
 
-        setSession(session);
-        setUser(session?.user ?? null);
+        console.log(
+          '[AuthProvider] Auth event:',
+          event,
+          !!currentSession
+        );
+
+        setSession(currentSession);
+        setUser(currentSession?.user ?? null);
         setIsLoading(false);
       }
     );
+
+    /*
+     * Get the existing session after the listener
+     * has already been registered.
+     */
+    supabase.auth
+      .getSession()
+      .then(({ data, error }) => {
+        if (!mounted) return;
+
+        if (error) {
+          console.error(
+            '[AuthProvider] getSession error:',
+            error
+          );
+
+          setSession(null);
+          setUser(null);
+          setIsLoading(false);
+          return;
+        }
+
+        setSession(data.session);
+        setUser(data.session?.user ?? null);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        if (!mounted) return;
+
+        console.error(
+          '[AuthProvider] Session initialization error:',
+          error
+        );
+
+        setSession(null);
+        setUser(null);
+        setIsLoading(false);
+      });
 
     return () => {
       mounted = false;
       subscription.unsubscribe();
     };
-  }, [pathname]);
+  }, []);
 
   const signOut = async () => {
+    const supabase = createClient();
+
     try {
-      const supabase = createClient();
+      const { error } = await supabase.auth.signOut();
 
-      await supabase.auth.signOut();
-
-      setUser(null);
-      setSession(null);
-    } catch (error) {
-      console.error(
-        '[AuthProvider] Sign out failed:',
-        error
-      );
-
+      if (error) {
+        console.error(
+          '[AuthProvider] Sign out error:',
+          error
+        );
+      }
+    } finally {
       setUser(null);
       setSession(null);
     }
