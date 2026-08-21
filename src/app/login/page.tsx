@@ -1,16 +1,26 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
 import { Button } from '@/components/Button';
+import { useAuth } from '@/components/Auth/AuthProvider';
 
 export default function LoginPage() {
   const router = useRouter();
+  const { user, isLoading: isAuthLoading } = useAuth();
 
   const [error, setError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const isNavigatingRef = React.useRef(false);
+
+  useEffect(() => {
+    if (!isAuthLoading && user && !isNavigatingRef.current) {
+      isNavigatingRef.current = true;
+      router.replace('/dashboard');
+    }
+  }, [user, isAuthLoading, router]);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -51,9 +61,9 @@ export default function LoginPage() {
       }
 
       // Login succeeded.
-      // Navigate to dashboard.
-      router.push('/dashboard');
-      router.refresh();
+      // Immediately trigger hard navigation to dashboard so browser leaves /login instantly.
+      isNavigatingRef.current = true;
+      window.location.assign('/dashboard');
 
     } catch (err) {
       console.error('Login error:', err);

@@ -24,11 +24,13 @@ export function DashboardOverview({ stats }: DashboardOverviewProps) {
               Overall Mastery: <strong style={{ color: 'var(--accent-primary)' }}>{stats.mastery.overallPercentage}%</strong> • Streak: <strong style={{ color: 'var(--accent-warning)' }}>🔥 {stats.currentStreakDays} day{stats.currentStreakDays === 1 ? '' : 's'}</strong>
             </p>
           </div>
-          <Link href="/progress">
-            <Button variant="primary" style={{ fontSize: '0.9rem' }}>
-              View Detailed Analytics Report →
-            </Button>
-          </Link>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
+            <Link href="/progress">
+              <Button variant="primary" style={{ fontSize: '0.9rem' }}>
+                View Detailed Analytics Report →
+              </Button>
+            </Link>
+          </div>
         </div>
       </Card>
 

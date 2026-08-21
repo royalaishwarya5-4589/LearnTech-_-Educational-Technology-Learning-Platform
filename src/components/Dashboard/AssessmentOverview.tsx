@@ -11,6 +11,18 @@ interface AssessmentOverviewProps {
   eligibilityMap?: Record<string, CertificationEligibility>;
 }
 
+function formatDateDDMMYYYY(dateString?: string | null): string {
+  if (!dateString) return 'N/A';
+  const d = new Date(dateString);
+  if (isNaN(d.getTime())) return 'N/A';
+
+  const day = String(d.getUTCDate()).padStart(2, '0');
+  const month = String(d.getUTCMonth() + 1).padStart(2, '0');
+  const year = d.getUTCFullYear();
+
+  return `${day}/${month}/${year}`;
+}
+
 export function AssessmentOverview({ attempts, eligibilityMap = {} }: AssessmentOverviewProps) {
   const passedAttempts = attempts.filter((a) => a.passed);
   const bestScore = attempts.reduce((max, a) => Math.max(max, a.percentage), 0);
@@ -72,7 +84,7 @@ export function AssessmentOverview({ attempts, eligibilityMap = {} }: Assessment
                     </Badge>
                   </div>
                   <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
-                    Attempt #{att.attempt_number} • {new Date(att.started_at).toLocaleDateString()}
+                    Attempt #{att.attempt_number} • {formatDateDDMMYYYY(att.started_at)}
                   </span>
                 </div>
 

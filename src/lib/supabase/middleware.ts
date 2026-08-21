@@ -32,9 +32,16 @@ export async function updateSession(request: NextRequest) {
 
   // Protect /dashboard route
   if (request.nextUrl.pathname.startsWith('/dashboard') && !user) {
-    // If Supabase is unconfigured/placeholder or user is unauthenticated, redirect to login
+    // If user is unauthenticated, redirect to login
     const url = request.nextUrl.clone();
     url.pathname = '/login';
+    return NextResponse.redirect(url);
+  }
+
+  // Redirect authenticated user away from auth pages directly to dashboard
+  if ((request.nextUrl.pathname === '/login' || request.nextUrl.pathname === '/signup') && user) {
+    const url = request.nextUrl.clone();
+    url.pathname = '/dashboard';
     return NextResponse.redirect(url);
   }
 

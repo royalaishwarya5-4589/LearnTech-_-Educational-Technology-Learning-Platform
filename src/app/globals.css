@@ -358,5 +358,84 @@ textarea:focus-visible {
   }
 }
 
+/* AI Tutor Robot Companion Animations */
+@keyframes robotFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes robotPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(0.92);
+  }
+}
+
+@keyframes panelSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes robotFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes robotPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
+}
+
+.ai-tutor-robot-btn:hover .robot-mascot-wrapper {
+  animation: robotFloat 1.8s ease-in-out infinite;
+}
+
+.robot-mascot-wrapper.idle {
+  animation: robotFloat 3.5s ease-in-out infinite;
+}
+
+.robot-mascot-wrapper.thinking .robot-eye-pulse {
+  animation: robotPulse 0.8s ease-in-out infinite;
+}
+
+.robot-mascot-wrapper.thinking .robot-chest-core {
+  animation: robotPulse 0.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .robot-mascot-wrapper,
+  .robot-mascot-wrapper.idle,
+  .robot-mascot-wrapper.thinking .robot-eye-pulse,
+  .robot-mascot-wrapper.thinking .robot-chest-core,
+  .ai-tutor-robot-btn:hover .robot-mascot-wrapper {
+    animation: none !important;
+  }
+}
+
 
 

@@ -9,6 +9,18 @@ interface SubmissionsListProps {
   submissions: ExerciseSubmission[];
 }
 
+function formatDateDDMMYYYY(dateString?: string | null): string {
+  if (!dateString) return 'Just now';
+  const d = new Date(dateString);
+  if (isNaN(d.getTime())) return 'Just now';
+
+  const day = String(d.getUTCDate()).padStart(2, '0');
+  const month = String(d.getUTCMonth() + 1).padStart(2, '0');
+  const year = d.getUTCFullYear();
+
+  return `${day}/${month}/${year}`;
+}
+
 export function SubmissionsList({ submissions }: SubmissionsListProps) {
   const [selectedCode, setSelectedCode] = useState<string | null>(null);
 
@@ -59,7 +71,7 @@ export function SubmissionsList({ submissions }: SubmissionsListProps) {
                   {sub.execution_time_ms ? `${sub.execution_time_ms} ms` : 'N/A'}
                 </td>
                 <td style={{ padding: '0.75rem', color: 'var(--text-muted)' }}>
-                  {sub.created_at ? new Date(sub.created_at).toLocaleDateString() : 'Just now'}
+                  {formatDateDDMMYYYY(sub.created_at)}
                 </td>
                 <td style={{ padding: '0.75rem', textAlign: 'right' }}>
                   <button

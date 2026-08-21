@@ -25,6 +25,7 @@ interface LessonWorkbenchProps {
 import { LessonProgressBar } from './LessonProgressBar';
 import { isLessonFullyCompleted } from '@/lib/progressUtils';
 import Link from 'next/link';
+import { useAITutorBridge } from '@/components/AITutor/useAITutorBridge';
 
 export function LessonWorkbench({
   path,
@@ -47,6 +48,15 @@ export function LessonWorkbench({
   const code = userCode ?? progress.last_code_submitted ?? lesson.exercise?.initialCode ?? 'print("Hello, Python!")\n';
   const setCode = (val: string) => setUserCode(val);
   const [validationResult, setValidationResult] = useState<ValidationResult | null>(null);
+
+  // Sync state with AI Tutor Context
+  useAITutorBridge({
+    pathSlug: path.slug,
+    lessonSlug: lesson.slug,
+    code,
+    logs: logs.map((l) => l.text).join('\n'),
+    title: `${path.title} • ${lesson.title}`,
+  });
 
   const exercisePassed = progress.exercise_completed || false;
   const conceptsCompleted = progress.concepts_completed || false;
@@ -114,7 +124,9 @@ export function LessonWorkbench({
             totalLessons={totalLessons}
           />
         </div>
-        <ProgressSyncIndicator isSyncing={isSyncing} syncSource={syncSource} />
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+          <ProgressSyncIndicator isSyncing={isSyncing} syncSource={syncSource} />
+        </div>
       </div>
 
       {/* Lesson Progress Step Indicator Bar */}

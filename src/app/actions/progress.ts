@@ -430,43 +430,55 @@ export async function getUserDashboardData(): Promise<DashboardStats | null> {
     return null;
   }
 
-  // Profile data
-  const { data: profile } = await supabase
-    .from('profiles')
-    .select('streak_count, last_active_date')
-    .eq('id', user.id)
-    .maybeSingle();
-
-  // Progress records
-  const { data: progressRecords } = await supabase
-    .from('user_progress')
-    .select('*')
-    .eq('user_id', user.id);
-
-  // Project progress records
-  const { data: projectRecords } = await supabase
-    .from('project_progress')
-    .select('*')
-    .eq('user_id', user.id);
-
-  // User achievement records
-  const { data: achievementRecords } = await supabase
-    .from('user_achievements')
-    .select('*')
-    .eq('user_id', user.id);
+  // Fetch all dashboard data concurrently for optimal performance
+  const [
+    { data: profile },
+    { data: progressRecords },
+    { data: projectRecords },
+    { data: achievementRecords },
+    { data: submissions },
+    { data: assessmentAttempts },
+    { data: userCertificates },
+  ] = await Promise.all([
+    supabase
+      .from('profiles')
+      .select('streak_count, last_active_date')
+      .eq('id', user.id)
+      .maybeSingle(),
+    supabase
+      .from('user_progress')
+      .select('*')
+      .eq('user_id', user.id),
+    supabase
+      .from('project_progress')
+      .select('*')
+      .eq('user_id', user.id),
+    supabase
+      .from('user_achievements')
+      .select('*')
+      .eq('user_id', user.id),
+    supabase
+      .from('exercise_submissions')
+      .select('*')
+      .eq('user_id', user.id)
+      .order('created_at', { ascending: false })
+      .limit(10),
+    supabase
+      .from('assessment_attempts')
+      .select('*')
+      .eq('user_id', user.id)
+      .order('created_at', { ascending: false }),
+    supabase
+      .from('certificates')
+      .select('*')
+      .eq('user_id', user.id)
+      .order('issued_at', { ascending: false }),
+  ]);
 
   const achievementMap: Record<string, string> = (achievementRecords || []).reduce((acc, a) => {
     acc[a.achievement_id] = a.unlocked_at;
     return acc;
   }, {} as Record<string, string>);
-
-  // Exercise submissions
-  const { data: submissions } = await supabase
-    .from('exercise_submissions')
-    .select('*')
-    .eq('user_id', user.id)
-    .order('created_at', { ascending: false })
-    .limit(10);
 
   const completedLessons = (progressRecords || []).filter(r => r.status === 'completed');
   const solvedExercises = (progressRecords || []).filter(r => r.exercise_completed);
@@ -570,13 +582,6 @@ export async function getUserDashboardData(): Promise<DashboardStats | null> {
     achievementMap
   );
 
-  // Fetch assessment attempts
-  const { data: assessmentAttempts } = await supabase
-    .from('assessment_attempts')
-    .select('*')
-    .eq('user_id', user.id)
-    .order('created_at', { ascending: false });
-
   const attemptsList = (assessmentAttempts || []) as import('@/types/user').AssessmentAttempt[];
 
   // Certification eligibility evaluation for active courses
@@ -590,13 +595,6 @@ export async function getUserDashboardData(): Promise<DashboardStats | null> {
       attemptsList
     );
   }
-
-  // Fetch user certificates
-  const { data: userCertificates } = await supabase
-    .from('certificates')
-    .select('*')
-    .eq('user_id', user.id)
-    .order('issued_at', { ascending: false });
 
   return {
     totalLessonsCompleted: completedLessons.length,

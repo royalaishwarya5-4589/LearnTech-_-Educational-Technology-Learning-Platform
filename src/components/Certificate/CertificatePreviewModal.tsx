@@ -29,9 +29,21 @@ export function CertificatePreviewModal({
 }: CertificatePreviewModalProps) {
   const { user } = useAuth();
 
-  const [learnerName, setLearnerName] = useState<string>('Student Name');
-  const [institutionName, setInstitutionName] = useState<string>('Institution Name');
-  const [studentId, setStudentId] = useState<string>('STU-LEARNTECH-SAMPLE');
+  const [learnerName, setLearnerName] = useState<string>(() =>
+    user?.user_metadata?.display_name ||
+    user?.user_metadata?.full_name ||
+    user?.email?.split('@')[0] ||
+    'Student Name'
+  );
+  const [institutionName, setInstitutionName] = useState<string>(() =>
+    user?.user_metadata?.institution_name ||
+    user?.user_metadata?.college ||
+    'Institution Name'
+  );
+  const [studentId, setStudentId] = useState<string>(() =>
+    user?.user_metadata?.student_id ||
+    (user ? `STU-${user.id.slice(0, 8).toUpperCase()}` : 'STU-LEARNTECH-SAMPLE')
+  );
   const [dynamicTimeframe, setDynamicTimeframe] = useState(() =>
     computeDynamicTimeframe(null, new Date(), getPathBySlug(courseSlug)?.estimatedHours)
   );
@@ -63,24 +75,6 @@ export function CertificatePreviewModal({
     let isMounted = true;
 
     if (user) {
-      // Initialize from user session metadata / email
-      const initialName =
-        user.user_metadata?.display_name ||
-        user.user_metadata?.full_name ||
-        user.email?.split('@')[0] ||
-        'Student Name';
-      const initialInst =
-        user.user_metadata?.institution_name ||
-        user.user_metadata?.college ||
-        'Institution Name';
-      const initialId =
-        user.user_metadata?.student_id ||
-        `STU-${user.id.slice(0, 8).toUpperCase()}`;
-
-      setLearnerName(initialName);
-      setInstitutionName(initialInst);
-      setStudentId(initialId);
-
       const userId = user.id;
 
       async function loadUserData() {

@@ -1,24 +1,44 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { signUpWithEmail } from '@/app/actions/auth';
 import { Button } from '@/components/Button';
+import { useAuth } from '@/components/Auth/AuthProvider';
 
 export default function SignupPage() {
+  const router = useRouter();
+  const { user, isLoading: isAuthLoading } = useAuth();
+
   const [error, setError] = useState<string | null>(null);
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  useEffect(() => {
+    if (!isAuthLoading && user) {
+      router.replace('/dashboard');
+    }
+  }, [user, isAuthLoading, router]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError(null);
+    setSuccessMessage(null);
     setIsSubmitting(true);
 
-    const formData = new FormData(e.currentTarget);
-    const result = await signUpWithEmail(formData);
+    try {
+      const formData = new FormData(e.currentTarget);
+      const result = await signUpWithEmail(formData);
 
-    if (result?.error) {
-      setError(result.error);
+      if (result?.error) {
+        setError(result.error);
+      } else if (result?.message) {
+        setSuccessMessage(result.message);
+      }
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'An error occurred during account creation.');
+    } finally {
       setIsSubmitting(false);
     }
   };
@@ -64,6 +84,22 @@ export default function SignupPage() {
             }}
           >
             {error}
+          </div>
+        )}
+
+        {successMessage && (
+          <div
+            style={{
+              backgroundColor: 'rgba(34, 197, 94, 0.1)',
+              border: '1px solid var(--accent-success, #22c55e)',
+              color: 'var(--accent-success, #22c55e)',
+              padding: '0.75rem',
+              borderRadius: 'var(--radius-md)',
+              fontSize: '0.85rem',
+              marginBottom: '1rem',
+            }}
+          >
+            {successMessage}
           </div>
         )}
 
